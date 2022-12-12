@@ -16,6 +16,6 @@ export const newBid = (newData) => (dispatch) => {
     console.log(newData)
     dispatch({
         type: 'NEW_BID',
-        payload: newData,
+        payload: {newData},
     });
 }

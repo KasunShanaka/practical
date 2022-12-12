@@ -14,7 +14,7 @@ const Biddings = () => {
       <div className={style.container}>
         <div className={style.header}>Biddings</div>
         {badeVehicles.map((item, index) => (
-          <div className={style.content}>
+          <div key={index} className={style.content}>
             <div className={style.card}>
               <span className={style.image}>
                 <img
