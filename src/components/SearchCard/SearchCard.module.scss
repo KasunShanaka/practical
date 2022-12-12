@@ -34,6 +34,11 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .price{
+            font-weight: bolder;
+            font-size: 1.1rem;
+            color: $primaryColor;
+        }
         .biddingInput {
             padding-block: 10px;
             font-weight: bold;
@@ -76,6 +81,19 @@
                     background-color: $borderColor;
                     color: $primaryFontColor;
                 }
+            }
+        }
+        .viewBtn{
+            margin-top: 10px;
+            background-color: $primaryDarkColor;
+            color: $inverseFontColor;
+            border-radius: $borderRadius;
+            width: 100%;
+            padding: 5px 20px;
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.02);
             }
         }
     }

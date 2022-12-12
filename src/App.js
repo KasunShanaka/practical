@@ -9,7 +9,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
       </Routes>
-      <Toaster />
+      <Toaster
+        position='bottom-right'
+      />
     </BrowserRouter >
   );
 }

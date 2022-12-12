@@ -17,13 +17,19 @@ const HomePage = () => {
     dispatch(getVehicles());
   }, [dispatch]);
 
+  const handleFilters = (brand) =>{
+    dispatch(getVehicles(brand));
+  }
+
   return (
     <div className={style.container}>
       <div className={style.navbar}>
         <div className={style.brandSelector}>
           <div className={style.label}>Brand</div>
           <div className={style.selectInput}>
-            <ReactSelect options={Brands} />
+            <ReactSelect
+             onChange={(e)=> handleFilters(e.value)}
+             options={Brands} />
           </div>
         </div>
         <div

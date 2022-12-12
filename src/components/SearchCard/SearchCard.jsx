@@ -4,6 +4,8 @@ import style from "./SearchCard.module.scss";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { newBid } from "../../store/actions";
 import { useDispatch } from "react-redux";
+import { toast } from "react-hot-toast";
+import { NavLink } from "react-router-dom";
 
 const SearchCard = ({
   id,
@@ -48,7 +50,8 @@ const SearchCard = ({
         },
       })
     );
-    // console.log(actions);
+    toast.success("Your bid has submitted successfully");
+    actions.resetForm();
   };
 
   return (
@@ -68,11 +71,11 @@ const SearchCard = ({
           {brand} {name} {year}
         </div>
         <div className={style.description}>{description}</div>
+        <div className={style.price}>{price} LKR</div>
         <Formik
           validationSchema={validationSchema}
           initialValues={initialValues}
           onSubmit={(values, actions) => {
-            alert(JSON.stringify(values, null, 2));
             actions.setSubmitting(false);
             handleSubmit(values, actions);
           }}
@@ -104,6 +107,26 @@ const SearchCard = ({
             </Form>
           )}
         </Formik>
+        <NavLink
+          to={{
+            pathname: "/view",
+            props: {
+              id: id,
+              name: name,
+              details: {
+                currency: currency,
+                price: 20000000,
+                color: color,
+                brand: brand,
+                manufactureYear: year,
+                image: image,
+                description: description,
+              },
+            },
+          }}
+        >
+          <button className={style.viewBtn}>Open</button>
+        </NavLink>
       </div>
     </div>
   );

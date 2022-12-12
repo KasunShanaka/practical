@@ -1,5 +1,9 @@
 export const Brands = [
     {
+        label: "All",
+        value: ""
+    },
+    {
         label: "Volkswagen",
         value: "Volkswagen"
     },
