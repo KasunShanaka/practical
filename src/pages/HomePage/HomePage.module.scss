@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .navbar {
+        // background-color: rgb(221, 221, 221);
+        height: 75px;
+        padding: 20px 10px;
+        display: grid;
+        grid-template-columns: auto min-content;
+
+        .brandSelector {
+            .label {
+            }
+            .selectInput {
+                max-width: 300px;
+            }
+        }
+        .bagIcon {
+            height: 25px;
+
+            img {
+                cursor: pointer;
+                transition: 0.2s;
+                height: 100%;
+
+            }
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .body {
+        padding: 20px;
+        display: grid;
+        justify-content: center;
+        gap: 20px;
+        grid-template-columns: auto auto auto auto;
+    }
+}

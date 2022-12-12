@@ -1,0 +1,57 @@
+@import "../../styles/variables";
+
+.container {
+    right: 0;
+    top: 50px;
+    width: 400px;
+    height: 80vh;
+    background-color: white;
+    border: 3px solid $borderColor;
+    box-shadow: 5px 5px 7px $shadowColor;
+    position: absolute;
+    padding: 20px;
+    display: grid;
+    overflow: auto;
+    grid-template-rows: max-content auto min-content;
+
+    .header {
+        font-size: 2rem;
+        text-align: center;
+        padding-block: 10px;
+    }
+    .content {
+        .card {
+            padding: 10px;
+            // background-color: red;
+            border: 1px solid $borderColor;
+            border-radius: $borderRadius;
+            box-shadow: 3px 3px 5px $shadowColor;
+            display: grid;
+            grid-template-columns: min-content auto;
+            align-items: flex-start;
+            gap: 10px;
+
+            .image {
+                img {
+                    height: 50px;
+                    object-fit: contain;
+                }
+            }
+            .info {
+                display: grid;
+                height: 100%;
+                grid-template-rows: auto min-content;
+
+                .title {
+                    font-weight: bold;
+                }
+                .bidValue {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .footer {
+        text-align: right;
+    }
+}

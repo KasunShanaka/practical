@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+
+.container {
+    .card {
+        padding: 10px;
+        // background-color: red;
+        border: 1px solid $borderColor;
+        box-shadow: 3px 3px 7px $shadowColor;
+        width: 200px;
+        display: grid;
+        justify-content: center;
+        border-radius: $borderRadius;
+        overflow: hidden;
+        gap: 5px;
+
+        .image {
+            width: 100%;
+            height: 120px;
+            padding-bottom: 10px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        .brandAndName {
+            font-weight: bold;
+            height: 40px;
+        }
+        .description {
+            width: 100%;
+            // word-wrap: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .biddingInput {
+            padding-block: 10px;
+            font-weight: bold;
+            
+            input {
+                max-width: 174px;
+                box-sizing: border-box;
+                border-radius: $borderRadius;
+                outline: none;
+                background-color: none;
+                padding: 5px 10px;
+                margin-right: 3px;
+            }
+        }
+        .errorMsg{
+            height: 20px;
+            font-size: 0.8rem;
+            color: $errorColor;
+            padding-bottom: 5px;
+        }
+        .submitButton {
+            text-align: center;
+            
+            .btn {
+                transition: 0.2s;
+                color: $inverseFontColor;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 10px 20px;
+                border: none;
+                border-radius: $borderRadius;
+                background-color: $primaryColor;
+
+                &:hover {
+                    background-color: $primaryDarkColor;
+                }
+                
+                &:disabled{
+                    cursor: auto;
+                    background-color: $borderColor;
+                    color: $primaryFontColor;
+                }
+            }
+        }
+    }
+}
